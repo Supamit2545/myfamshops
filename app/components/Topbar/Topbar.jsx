@@ -125,8 +125,9 @@ const Topbar = () => {
         }
     }
     const Logout = async () => {
-        document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; https://myfamshops.vercel.app";
-        document.cookie = "connect.sid=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; https://myfamshops.vercel.app";
+        axios.get('https://testbackend-mk59.onrender.com/logout',{
+        }).then((res)=>alert(res.data.message))
+        .catch((err)=>console.log(err))
         window.location.reload()
     }
     undertabs()
