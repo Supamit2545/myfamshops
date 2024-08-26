@@ -1,0 +1,16 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "SupamitDB",
+            "database": "Users",
+            "username": "postgres",
+            "password": "7876087Aa",
+            "connectionTimeout": 30,
+            "group": "SupamitDB"
+        }
+    ]
+}
