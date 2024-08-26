@@ -17,7 +17,7 @@ const port = 3001
 // Middle Ware
 app.use(bodyParser.json())
 app.use(cors({
-    origin: ['https://myfamshop-d6e1348c9f1e.herokuapp.com'],
+    origin: ['https://myfamshops.vercel.app'],
     methods:["POST","GET",],
     credentials: true
 }))
@@ -206,9 +206,4 @@ app.get('/getRating',(req,res)=>{
         }
     })
 })
-// Send Email
-app.listen(port, () => {
-    console.log(`Server running at PORT:${port}`);
-});
-
 // 

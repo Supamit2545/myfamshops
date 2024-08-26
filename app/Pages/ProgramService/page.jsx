@@ -72,7 +72,7 @@ const ProgramServicePage = () => {
     Aos.init();
   }, [])
   useEffect(() => {
-    const response = axios.get('https://myfamshop-d6e1348c9f1e.herokuapp.com:3001/user', {
+    const response = axios.get('https://testbackend-mk59.onrender.com/user', {
       withCredentials: true
     }).then((res) => {
       setLogin(!Logeding)
@@ -93,13 +93,13 @@ const ProgramServicePage = () => {
     setSendModal(!SendModal)
   }
   useEffect(() => {
-    axios.get('https://myfamshop-backend-e28fa0d97334.herokuapp.com/GetReviewps')
+    axios.get('https://testbackend-mk59.onrender.com/GetReviewps')
       .then((res) => setPsreview(res.data))
       .catch((err) => console.log("Error: ", err))
   }, [])
 
   function SendPsreview() {
-    axios.post('https://myfamshop-backend-e28fa0d97334.herokuapp.com/SendReviewps', {
+    axios.post('https://testbackend-mk59.onrender.com/SendReviewps', {
       displayname: getname,
       content: content,
     }).then(() => {

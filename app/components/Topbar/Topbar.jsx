@@ -20,14 +20,14 @@ const Topbar = () => {
     const [openHam, setOpenHam] = useState(false)
 
     useEffect(() => {
-        axios.get('https://myfamshop-backend-e28fa0d97334.herokuapp.com/read')
+        axios.get('https://testbackend-mk59.onrender.com/read')
             .then((res) => setUsers(res.data))
             .catch((err) => console.log(err))
     }, [])
 
     useEffect(() => {
         try {
-            const response = axios.get('https://myfamshop-backend-e28fa0d97334.herokuapp.com/user', {
+            const response = axios.get('https://testbackend-mk59.onrender.com/user', {
                 withCredentials: true
             }).then((res) => {
                 setLogin(res.data.users)
@@ -88,7 +88,7 @@ const Topbar = () => {
     }
     function CreateUser() {
         if (passcon === password) {
-            axios.post('https://myfamshop-backend-e28fa0d97334.herokuapp.com/Register', {
+            axios.post('https://testbackend-mk59.onrender.com/Register', {
                 username: username,
                 password: password,
             }).then(() => {
@@ -107,7 +107,7 @@ const Topbar = () => {
     const Login = async () => {
         try {
             axios.defaults.withCredentials = true
-            const response = await axios.post('https://myfamshop-backend-e28fa0d97334.herokuapp.com/Login', {
+            const response = await axios.post('https://testbackend-mk59.onrender.com/Login', {
                 username: username,
                 password: password
             }, {
@@ -125,7 +125,7 @@ const Topbar = () => {
         }
     }
     const Logout = async () => {
-        document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; http://localhost:3000";
+        document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; https://myfamshops.vercel.app/";
         // document.cookie = "connect.sid=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; http://localhost:3000";
         window.location.reload()
     }
