@@ -93,13 +93,13 @@ const ProgramServicePage = () => {
     setSendModal(!SendModal)
   }
   useEffect(() => {
-    axios.get('http://localhost:3001/GetReviewps')
+    axios.get('https://myfamshop-backend-e28fa0d97334.herokuapp.com/GetReviewps')
       .then((res) => setPsreview(res.data))
       .catch((err) => console.log("Error: ", err))
   }, [])
 
   function SendPsreview() {
-    axios.post('http://localhost:3001/SendReviewps', {
+    axios.post('https://myfamshop-backend-e28fa0d97334.herokuapp.com/SendReviewps', {
       displayname: getname,
       content: content,
     }).then(() => {

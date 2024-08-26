@@ -90,7 +90,7 @@ const RestaurantPage = () => {
     };
 
     useEffect(() => {
-        const response = axios.get('http://localhost:3001/user', {
+        const response = axios.get('https://myfamshop-backend-e28fa0d97334.herokuapp.com/user', {
             withCredentials: true
         }).then((res) => {
             setDisplayname(res.data.users)
@@ -99,7 +99,7 @@ const RestaurantPage = () => {
         })
     }, [])
     useEffect(() => {
-        axios.get('http://localhost:3001/getRating')
+        axios.get('https://myfamshop-backend-e28fa0d97334.herokuapp.com/getRating')
         .then((res)=>setReview(res.data))
         .catch((err)=>console.log(err))
     }, [])
@@ -108,7 +108,7 @@ const RestaurantPage = () => {
         if (!displayname) {
             alert("Please Login First!")
         } else {
-            axios.post("http://localhost:3001/save-rating", {
+            axios.post("https://myfamshop-backend-e28fa0d97334.herokuapp.com/save-rating", {
                 displayname: displayname,
                 content: content,
                 rate: star
