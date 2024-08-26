@@ -72,7 +72,7 @@ const ProgramServicePage = () => {
     Aos.init();
   }, [])
   useEffect(() => {
-    const response = axios.get('http://localhost:3001/user', {
+    const response = axios.get('https://myfamshop-d6e1348c9f1e.herokuapp.com:3001/user', {
       withCredentials: true
     }).then((res) => {
       setLogin(!Logeding)

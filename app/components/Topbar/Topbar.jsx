@@ -20,14 +20,14 @@ const Topbar = () => {
     const [openHam, setOpenHam] = useState(false)
 
     useEffect(() => {
-        axios.get('http://localhost:3001/read')
+        axios.get('https://myfamshop-backend-e28fa0d97334.herokuapp.com/read')
             .then((res) => setUsers(res.data))
             .catch((err) => console.log(err))
     }, [])
 
     useEffect(() => {
         try {
-            const response = axios.get('http://localhost:3001/user', {
+            const response = axios.get('https://myfamshop-backend-e28fa0d97334.herokuapp.com/user', {
                 withCredentials: true
             }).then((res) => {
                 setLogin(res.data.users)
@@ -88,7 +88,7 @@ const Topbar = () => {
     }
     function CreateUser() {
         if (passcon === password) {
-            axios.post('http://localhost:3001/Register', {
+            axios.post('https://myfamshop-backend-e28fa0d97334.herokuapp.com/Register', {
                 username: username,
                 password: password,
             }).then(() => {
@@ -107,7 +107,7 @@ const Topbar = () => {
     const Login = async () => {
         try {
             axios.defaults.withCredentials = true
-            const response = await axios.post('http://localhost:3001/Login', {
+            const response = await axios.post('https://myfamshop-backend-e28fa0d97334.herokuapp.com/Login', {
                 username: username,
                 password: password
             }, {
@@ -194,7 +194,7 @@ const Topbar = () => {
                     </div>
                 ) : (
                     <div className='topbar-right space-x-5 my-auto font-mono'>
-                        <button className='border-1 border-gray px-5 py-2 w-full bg-blue-500 hover:bg-blue-800 font-bold hover:text-white' onClick={(e) => { authModal() }}>Login</button>
+                        <button className='border-1 border-gra px-5 py-2 w-full bg-blue-500 hover:bg-blue-800 font-bold hover:text-white' onClick={(e) => { authModal() }}>Login</button>
                     </div>
                 )}
             </div>
