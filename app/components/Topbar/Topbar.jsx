@@ -128,6 +128,7 @@ const Topbar = () => {
         axios.get('https://testbackend-mk59.onrender.com/logout',{
         }).then((res)=>alert(res.data.message))
         .catch((err)=>console.log(err))
+        document.cookie = 'token=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;';
         window.location.reload()
     }
     undertabs()
