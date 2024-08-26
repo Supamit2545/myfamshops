@@ -125,8 +125,8 @@ const Topbar = () => {
         }
     }
     const Logout = async () => {
-        document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; https://myfamshops.vercel.app/";
-        // document.cookie = "connect.sid=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; http://localhost:3000";
+        document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; https://myfamshops.vercel.app";
+        document.cookie = "connect.sid=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; https://myfamshops.vercel.app";
         window.location.reload()
     }
     undertabs()
