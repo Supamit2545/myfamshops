@@ -90,7 +90,7 @@ const RestaurantPage = () => {
     };
 
     useEffect(() => {
-        const response = axios.get('https://testbackend-mk59.onrender.com/user', {
+        const response = axios.get('https://testbackend-1-88e7.onrender.com/user', {
             withCredentials: true
         }).then((res) => {
             setDisplayname(res.data.users)
@@ -99,7 +99,7 @@ const RestaurantPage = () => {
         })
     }, [])
     useEffect(() => {
-        axios.get('https://testbackend-mk59.onrender.com/getRating')
+        axios.get('https://testbackend-1-88e7.onrender.com/getRating')
         .then((res)=>setReview(res.data))
         .catch((err)=>console.log(err))
     }, [])
@@ -108,7 +108,7 @@ const RestaurantPage = () => {
         if (!displayname) {
             alert("Please Login First!")
         } else {
-            axios.post("https://testbackend-mk59.onrender.com/save-rating", {
+            axios.post("https://testbackend-1-88e7.onrender.com/save-rating", {
                 displayname: displayname,
                 content: content,
                 rate: star

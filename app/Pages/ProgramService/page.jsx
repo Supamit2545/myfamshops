@@ -72,7 +72,7 @@ const ProgramServicePage = () => {
     Aos.init();
   }, [])
   useEffect(() => {
-    const response = axios.get('https://testbackend-mk59.onrender.com/user', {
+    const response = axios.get('https://testbackend-1-88e7.onrender.com/user', {
       withCredentials: true
     }).then((res) => {
       setLogin(!Logeding)
@@ -93,13 +93,13 @@ const ProgramServicePage = () => {
     setSendModal(!SendModal)
   }
   useEffect(() => {
-    axios.get('https://testbackend-mk59.onrender.com/GetReviewps')
+    axios.get('https://testbackend-1-88e7.onrender.com/GetReviewps')
       .then((res) => setPsreview(res.data))
       .catch((err) => console.log("Error: ", err))
   }, [])
 
   function SendPsreview() {
-    axios.post('https://testbackend-mk59.onrender.com/SendReviewps', {
+    axios.post('https://testbackend-1-88e7.onrender.com/SendReviewps', {
       displayname: getname,
       content: content,
     }).then(() => {
