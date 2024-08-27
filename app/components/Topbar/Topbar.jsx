@@ -1,8 +1,9 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import axios from 'axios'
+import { BEurlContext } from '../BackendChange/BackendChange'
 
 
 const Topbar = () => {
@@ -18,16 +19,17 @@ const Topbar = () => {
     const [user, setUsers] = useState([])
     const [error, setError] = useState("")
     const [openHam, setOpenHam] = useState(false)
+    const BEurl = 'https://testbackend-1-88e7.onrender.com'
 
     useEffect(() => {
-        axios.get('https://testbackend-1-88e7.onrender.com/read')
+        axios.get(`${BEurl}/read`)
             .then((res) => setUsers(res.data))
             .catch((err) => console.log(err))
     }, [])
 
     useEffect(() => {
         try {
-            const response = axios.get('https://testbackend-1-88e7.onrender.com/user', {
+            const response = axios.get(`${BEurl}/user`, {
                 withCredentials: true
             }).then((res) => {
                 setLogin(res.data.users)
@@ -88,7 +90,7 @@ const Topbar = () => {
     }
     function CreateUser() {
         if (passcon === password) {
-            axios.post('https://testbackend-1-88e7.onrender.com/Register', {
+            axios.post(`${BEurl}/Register`, {
                 username: username,
                 password: password,
             }).then(() => {
@@ -107,7 +109,7 @@ const Topbar = () => {
     const Login = async () => {
         try {
             axios.defaults.withCredentials = true
-            const response = await axios.post('https://testbackend-1-88e7.onrender.com/Login', {
+            const response = await axios.post(`${BEurl}/Login`, {
                 username: username,
                 password: password
             }, {
@@ -125,7 +127,7 @@ const Topbar = () => {
         }
     }
     const Logout = async () => {
-        axios.get('https://testbackend-1-88e7.onrender.com/logout',{
+        axios.get(`${BEurl}/logout`,{
         }).then((res)=>alert(res.data.message))
         .catch((err)=>console.log(err))
         document.cookie = 'token=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;';
